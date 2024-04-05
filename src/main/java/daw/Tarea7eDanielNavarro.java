@@ -95,7 +95,7 @@ public class Tarea7eDanielNavarro {
         String nombrearchivo = teclado.nextLine();
         
         try {
-            Lectura.leerJson(nombrearchivo);
+            Lectura.leerJson("./aplicacionesJSON/"+nombrearchivo);
         } catch (IOException ex) {
             System.out.println("error accediendo al archivo : " + nombrearchivo);
         }
