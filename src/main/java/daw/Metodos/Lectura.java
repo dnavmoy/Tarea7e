@@ -48,7 +48,7 @@ public class Lectura {
         //mapeador.registerModule(new JavaTimeModule());
         
         ArrayList<App> catalogo = mapeador.readValue(new File(ruta),
-                    mapeador.getTypeFactory().constructCollectionType(ArrayList.class, App.class));
+                    mapeador.getTypeFactory().constructCollectionType(ArrayList.class,App.class));
         System.out.println("---- Catálogo de App ----");
         for (App app : catalogo) {
             System.out.println(app);
@@ -65,10 +65,9 @@ public class Lectura {
         //mapeador.registerModule(new JavaTimeModule());
         
         
-        App app= mapeador.readValue(ruta, App.class);
-//        App app = mapeador.readValue(new File(ruta),
-//                    mapeador.getTypeFactory().constructCollectionType( App.class));
-        System.out.println("---- Catálogo de App ----");
+        App app= mapeador.readValue(new File(ruta), App.class);
+
+        System.out.println("---- Mostrar App ----");
         
         System.out.println(app);
         

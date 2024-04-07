@@ -95,12 +95,17 @@ public class Tarea7eDanielNavarro {
         String nombrearchivo = teclado.nextLine();
         
         try {
-            Lectura.leerJson("./aplicacionesJSON/"+nombrearchivo);
+            Lectura.leer1Json("./aplicacionesJSON/"+nombrearchivo);
         } catch (IOException ex) {
             System.out.println("error accediendo al archivo : " + nombrearchivo);
         }
         
-
+        //Borra el archivo leído y comprueba que ya no está en el directorio ./aplicacionesJSON.
+        File archivo = new File("./aplicacionesJSON/"+nombrearchivo);
+        archivo.delete();
+        System.out.println("Existe el archivo?: "+ archivo.exists());
+        
+        
     }
 
 
